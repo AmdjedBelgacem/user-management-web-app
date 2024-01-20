@@ -1,0 +1,35 @@
+{
+  "MasterView": {
+    "title": "Kullanıcı Listesi",
+    "ID": "ID",
+    "FullName": "Tam Adı",
+    "Email": "E-posta",
+    "Operations": "İşlemler",
+    "New": "Yn",
+    "Edit": "Dzn",
+    "Delete": "Sil",
+    "NoUser": "Kullanıcı Bulunamadı"
+  },
+  "DetailedView": {
+    "CreatedAt": "Oluşturulma Tarihi",
+    "LastUpdated": "Son Güncelleme Tarihi",
+    "Save": "Kaydet",
+    "Back": "Geri",
+    "Create": "Oluştur",
+    "EditAUser": "Kullanıcı Düzenle",
+    "DeleteAUser": "Kullanıcı Sil",
+    "CreateAUser": "Kullanıcı Oluştur",
+    "Delete": "Sil",
+    "Username": "Kullanıcı Adı",
+    "Gender": "Cinsiyet",
+    "BirthDate": "Doğum Tarihi",
+    "PhoneNumber": "Telefon Numarası",
+    "Male": "Erkek",
+    "Female": "Kadın",
+    "NotAssigned": "Belirtilmemiş"
+  },
+  "NotFound": {
+    "NotFound": "Bu Sayfa Mevcut Değil",
+    "Redirect": "Ana Sayfaya Dönmek İçin Tıklayın"
+  }
+}

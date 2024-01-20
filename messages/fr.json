@@ -1,0 +1,35 @@
+{
+  "MasterView": {
+    "title": "Liste Des Utilisateurs",
+    "ID": "ID",
+    "FullName": "Nom complet",
+    "Email": "Courriel ",
+    "Operations": "Opérations",
+    "New": "Nv",
+    "Edit": "Modif",
+    "Delete": "Supp",
+    "NoUser": "Aucun utilisateur avec ce nom"
+  },
+  "DetailedView": {
+    "CreatedAt": "Date De Création",
+    "LastUpdated": "Dernière mise à jour",
+    "Save": "Enregistrer",
+    "Back": "Retour",
+    "Create": "Créer",
+    "EditAUser": "Modifier Un Utilisateur",
+    "DeleteAUser": "Supprimer Un Utilisateur",
+    "CreateAUser": "Créer Un Utilisateur",
+    "Delete": "Supprimer",
+    "Username": "Nom d'utilisateur",
+    "Gender": "Genre",
+    "BirthDate": "Date de naissance",
+    "PhoneNumber": "Numéro de téléphone",
+    "Male": "Homme",
+    "Female": "Femme",
+    "NotAssigned": "Non spécifié"
+  },
+  "NotFound": {
+    "NotFound": "Cette page n'existe pas",
+    "Redirect": "Retour à la page d'accueil"
+  }
+}

@@ -8,7 +8,7 @@
     "New": "Nv",
     "Edit": "Modif",
     "Delete": "Supp",
-    "NoUser": "Aucun utilisateur avec ce nom"
+    "NoUser": "Aucun utilisateur trouvé"
   },
   "DetailedView": {
     "CreatedAt": "Date De Création",

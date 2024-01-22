@@ -1,3 +1,9 @@
 {
+  "/_not-found": "app/_not-found.js",
+  "/favicon.ico/route": "app/favicon.ico/route.js",
+  "/[locale]/[...rest]/page": "app/[locale]/[...rest]/page.js",
+  "/[locale]/delete/[deleteId]/page": "app/[locale]/delete/[deleteId]/page.js",
+  "/[locale]/create/page": "app/[locale]/create/page.js",
+  "/[locale]/edit/[editId]/page": "app/[locale]/edit/[editId]/page.js",
   "/[locale]/page": "app/[locale]/page.js"
 }

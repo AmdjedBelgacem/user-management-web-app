@@ -2,7 +2,7 @@ import Delete from "@/components/Delete";
 import React from "react";
 import { useTranslations } from "next-intl";
 
-export default function Page({ params }: { params: { slug: string } }) {
+export default function Page({ params }: { params: { deleteId: string } }) {
   const m = useTranslations("MasterView");
   const mTranslations = {
     id: m("ID"),

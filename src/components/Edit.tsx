@@ -23,7 +23,7 @@ export default function Edit({
   mTranslations,
   dTranslations,
 }: {
-  params: { slug: string };
+  params: { editId: string};
   mTranslations: {
     id: string;
     fullName: string;
@@ -46,8 +46,10 @@ export default function Edit({
   const { updateUser } = useUpdateData();
   const { users, loading } = useFetchData(
     "http://localhost:8000/users",
-    params.slug
+    params.editId
   );
+
+  console.log(params.editId)
   // Using the useRouter hook to redirect to the relevant page
   const router = useRouter();
   // State variable to track the form data
@@ -92,7 +94,7 @@ export default function Edit({
           <form
             onSubmit={(e) => {
               e.preventDefault();
-              updateUser(params.slug, formData);
+              updateUser(params.editId, formData);
               setSaveLoading(true);
               setTimeout(() => {
                 router.push("/");

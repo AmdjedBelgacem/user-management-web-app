@@ -14,7 +14,7 @@ export default function Delete({
   dTranslations,
   actionText,
 }: {
-  params: { slug: string };
+  params: { deleteId: string };
   mTranslations: {
     id: string;
     fullName: string;
@@ -44,7 +44,7 @@ export default function Delete({
   // Calling the useHooks i made
   const { users, loading } = useFetchData(
     "http://localhost:8000/users",
-    params.slug
+    params.deleteId
   );
   const { deleteUser } = useDeleteData();
 
@@ -82,7 +82,7 @@ export default function Delete({
               colorScheme="red"
               borderRadius={`10px`}
               onClick={() => {
-                deleteUser(params.slug);
+                deleteUser(params.deleteId);
                 setDeleteLoading(true);
                 setTimeout(() => {
                   router.push("/");

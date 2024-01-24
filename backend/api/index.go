@@ -1,5 +1,5 @@
 // This is to Indicate that this file is part of the main package.
-package handler
+package main
 
 // Importing necessary packages for the server functionality.
 import (
@@ -9,14 +9,13 @@ import (
 	"net/http"
 	"os"
 
-	"github.com/gorilla/mux"
+	"github.com/gorilla/mux" // Importing the Gorilla Mux router package to handle HTTP requests.
 	"github.com/joho/godotenv"
+	"github.com/rs/cors" // Importing the CORS package to handle Cross-Origin Resource Sharing.
 	"go.mongodb.org/mongo-driver/bson"
 	"go.mongodb.org/mongo-driver/bson/primitive"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	// Importing the Gorilla Mux router package to handle HTTP requests.
-	// Importing the CORS package to handle Cross-Origin Resource Sharing.
 	// Basically i had an issue with the Cross-Origin Resource Sharing policy, so i had to use this package to handle it.
 )
 
@@ -227,13 +226,19 @@ func DeleteUser(w http.ResponseWriter, r *http.Request) {
 	w.WriteHeader(http.StatusNoContent)
 }
 
-func Handler(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintf(w, "<h1>Hello from Go!</h1>")
-}
-
-func Main() {
+func main() {
 	// Creating a new Gorilla Mux router.
 	router := mux.NewRouter()
+	// Creating a CORS handler with specific options.
+	corsHandler := cors.New(cors.Options{
+		AllowedOrigins:   []string{"*"},                            // Allowing requests from any origin, for the sake of Testing of course.
+		AllowedMethods:   []string{"GET", "POST", "PUT", "DELETE"}, // Allowing specific HTTP methods.
+		AllowedHeaders:   []string{"Content-Type"},                 // Allowing only specified headers
+		AllowCredentials: true,                                     // Allowing credentials in requests.
+	})
+
+	// Wrapping the router with the CORS handler.
+	routerWithCors := corsHandler.Handler(router)
 
 	// Defining HTTP routes and their corresponding handler functions.
 	router.HandleFunc("/users", GetAllUsers).Methods("GET")        // Route to get all users.
@@ -246,5 +251,5 @@ func Main() {
 	fmt.Println("Server running on port 8000")
 
 	// Starting the HTTP server on port 8000 with the CORS-wrapped router.
-	http.ListenAndServe(":8000", router)
+	http.ListenAndServe(":8000", routerWithCors)
 }

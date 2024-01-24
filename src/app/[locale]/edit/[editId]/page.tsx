@@ -2,7 +2,7 @@ import Edit from "@/components/Edit";
 import React from "react";
 import { useTranslations } from "next-intl";
 
-export default function Page({ params }: { params: { slug: string } }) {
+export default function Page({ params }: {params:{editId:string}}) {
   const m = useTranslations("MasterView");
   const mTranslations = {
     id: m("ID"),
